@@ -1,0 +1,62 @@
+body {
+    margin: 20px;
+    padding: 25px;
+    background-color: #008000; /* Color verde */
+}
+
+#openModal {
+    background-color: #007bff; /* Color original del botón */
+}
+
+/* Bootstrap Styles */
+.modal {
+    display: none;
+    transition: opacity 0.15s linear;
+}
+
+.modal.fade {
+    opacity: 0;
+}
+
+.modal.fade.show {
+    opacity: 1;
+}
+
+.modal-dialog {
+    max-width: 500px;
+    margin: 1.75rem auto;
+}
+
+.modal-content {
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.3rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-title {
+    margin: 0;
+}
+
+.close {
+    margin: 0;
+    padding: 0;
+    color: #000;
+    font-size: 1.5rem;
+}
+
+.modal-body {
+    padding: 15px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}

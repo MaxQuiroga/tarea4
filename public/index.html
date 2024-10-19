@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Proyecto Bootstrap con jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <!-- Botón que activa el modal -->
+    <button id="openModal" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Abrir Modal</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal título</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Contenido del modal.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const colorAmarillo = '#FFFF00';
+        const colorRojo = '#FF0000';
+        const colorVerde = '#008000';
+
+        $('#myModal').on('show.bs.modal', function () {
+            console.log('Modal comenzando a abrirse');
+            $('#openModal').prop('disabled', true).css('background-color', colorRojo);
+        });
+
+        $('#myModal').on('shown.bs.modal', function () {
+            console.log('Modal terminado de abrirse');
+        });
+
+        $('#myModal').on('hide.bs.modal', function () {
+            console.log('Modal comenzando a ocultarse');
+        });
+
+        $('#myModal').on('hidden.bs.modal', function () {
+            console.log('Modal terminado de ocultarse');
+            $('#openModal').prop('disabled', false).css('background-color', '');
+        });
+    </script>
+</body>
+</html>
